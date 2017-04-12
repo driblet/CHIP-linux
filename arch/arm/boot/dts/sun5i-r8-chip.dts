@@ -60,7 +60,6 @@
 		i2c2 = &i2c2;
 		serial0 = &uart1;
 		serial1 = &uart3;
-    spi2 = &spi2;
 	};
 
 	chosen {
@@ -266,28 +265,6 @@
 	        allwinner,pull = <SUN4I_PINCTRL_PULL_UP>;
 	};
 
-  spi2_pins_a: spi2@0 {
-    allwinner,pins = "PE1", "PE2", "PE3";
-    allwinner,function = "spi2";
-    allwinner,drive = <SUN4I_PINCTRL_10_MA>;
-    allwinner,pull = <SUN4I_PINCTRL_NO_PULL>;
-  };
-
-  spi2_cs0_pins_a: spi2_cs0@0 {
-    allwinner,pins = "PE0";
-    allwinner,function = "spi2";
-    allwinner,drive = <SUN4I_PINCTRL_10_MA>;
-    allwinner,pull = <SUN4I_PINCTRL_NO_PULL>;
-  };
-
-};
-
-/* Add support for SPI */
-&spi2{
-	pinctrl-names = "default";
-	pinctrl-0 = <&spi2_pins_a>,
-		    <&spi2_cs0_pins_a>;
-	status = "okay";
 };
 
 &reg_dcdc2 {
