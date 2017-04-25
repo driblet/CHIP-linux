@@ -138,20 +138,20 @@
 };
 
 &spi2{
-       pinctrl-names = "default";
-       pinctrl-0 = <&spi2_pins_a>,
-                   <&spi2_cs0_pins_a>;
-       status = "okay";
-       spi2_0 {
-               #address-cells = <1>;
-               #size-cells = <0>;
-
-               compatible = "spidev";
-
-               reg = <0>;
-               spi-max-frequency = <50000000>;
-       };
- };
+  pinctrl-names = "default";
+  pinctrl-0 = <&spi2_pins_a>,
+              <&spi2_cs0_pins_a>;
+  status = "okay";
+  spi2_0 {
+    #address-cells = <1>;
+    #size-cells = <0>;
+    compatible = "microchip,enc28j60";
+    reg = <0>;
+    spi-max-frequency = <12000000>;
+    interrupt-parent = <&pio>;
+    interrupts = <6 13 IRQ_TYPE_EDGE_FALLING>;
+  };
+};
 
 
 &lradc {
