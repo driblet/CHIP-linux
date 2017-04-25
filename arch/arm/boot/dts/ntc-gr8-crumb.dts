@@ -137,23 +137,6 @@
 	status = "okay";
 };
 
-&spi2{
-       pinctrl-names = "default";
-       pinctrl-0 = <&spi2_pins_a>,
-                   <&spi2_cs0_pins_a>;
-       status = "okay";
-       spi2_0 {
-               #address-cells = <1>;
-               #size-cells = <0>;
-               compatible = "microchip,enc28j60";
-               reg = <0>;
-               spi-max-frequency = <12000000>;
-	       interrupt-parent = <&pio>;
-	       interrupts = <6 d IRQ_TYPE_EDGE_FALLING>;
-       };
- };
-
-
 &lradc {
 	vref-supply = <&reg_ldo2>;
 	status = "okay";
@@ -232,6 +215,22 @@
 		allwinner,pull = <SUN4I_PINCTRL_NO_PULL>;
 	};
 };
+
+&spi2{
+       pinctrl-names = "default";
+       pinctrl-0 = <&spi2_pins_a>,
+                   <&spi2_cs0_pins_a>;
+       status = "okay";
+       spi2_0 {
+               #address-cells = <1>;
+               #size-cells = <0>;
+               compatible = "microchip,enc28j60";
+               reg = <0>;
+               spi-max-frequency = <12000000>;
+	       interrupt-parent = <&pio>;
+	       interrupts = <6 d IRQ_TYPE_EDGE_FALLING>;
+       };
+ };
 
 &pwm {
 	pinctrl-names = "default";
