@@ -145,11 +145,11 @@
        spi2_0 {
                #address-cells = <1>;
                #size-cells = <0>;
-
-               compatible = "spidev";
-
+               compatible = "microchip,enc28j60";
                reg = <0>;
-               spi-max-frequency = <50000000>;
+               spi-max-frequency = <12000000>;
+	       interrupt-parent = <&pio>;
+	       interrupts = <6 d IRQ_TYPE_EDGE_FALLING>;
        };
  };
 
