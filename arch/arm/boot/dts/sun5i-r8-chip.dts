@@ -264,7 +264,6 @@
 	        allwinner,drive = <SUN4I_PINCTRL_10_MA>;
 	        allwinner,pull = <SUN4I_PINCTRL_PULL_UP>;
 	};
-
 };
 
 &reg_dcdc2 {
